@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dresya — Silk, Shaped by Heritage</title>
+
+  <meta name="description" content="Dresya — Azerbaijani silk scarves shaped by heritage, craftsmanship and contemporary design.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f4ef;
+      color: #1d1d1b;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 25px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      letter-spacing: 5px;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 18px;
+    }
+
+    /* HERO */
+
+    .hero {
+      height: 100vh;
+      min-height: 650px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(20, 18, 15, 0.25),
+          rgba(20, 18, 15, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 30px;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .hero-small {
+      font-size: 12px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(50px, 8vw, 105px);
+      font-weight: normal;
+      line-height: 0.95;
+      letter-spacing: 3px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid white;
+      padding: 15px 35px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: white;
+      color: #1d1d1b;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 120px 8%;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      color: #777;
+    }
+
+    .intro h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 5vw, 60px);
+      font-weight: normal;
+      line-height: 1.15;
+      margin-bottom: 30px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* COLLECTION */
+
+    .collection {
+      padding: 20px 6% 120px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: normal;
+    }
+
+    .view-all {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #1d1d1b;
+      padding-bottom: 5px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .product {
+      cursor: pointer;
+    }
+
+    .product-image {
+      aspect-ratio: 0.82;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .product:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding: 18px 3px;
+    }
+
+    .product-name {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .product-detail {
+      font-size: 11px;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+    /* STORY */
+
+    .story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 700px;
+      background: #e9e2d8;
+    }
+
+    .story-image {
+      background:
+        url("https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=1400&q=85")
+        center/cover no-repeat;
+    }
+
+    .story-content {
+      display: flex;
+      align-items: center;
+      padding: 80px 12%;
+    }
+
+    .story-content h2 {
+      font-family: Georgia, serif;
+      font-size: 52px;
+      font-weight: normal;
+      line-height: 1.05;
+      margin-bottom: 30px;
+    }
+
+    .story-content p {
+      color: #555;
+      margin-bottom: 35px;
+      font-size: 16px;
+    }
+
+    .dark-button {
+      display: inline-block;
+      background: #1d1d1b;
+      color: white;
+      padding: 15px 30px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* HERITAGE */
+
+    .heritage {
+      padding: 130px 8%;
+      text-align: center;
+      background: #f7f4ef;
+    }
+
+    .heritage h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(40px, 6vw, 70px);
+      font-weight: normal;
+      margin-bottom: 30px;
+    }
+
+    .heritage p {
+      max-width: 700px;
+      margin: auto;
+      color: #666;
+    }
+
+    /* THREE FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .feature {
+      padding: 60px 35px;
+      text-align: center;
+      border-right: 1px solid #ddd;
+    }
+
+    .feature:last-child {
+      border-right: none;
+    }
+
+    .feature-number {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .feature p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+      padding: 120px 6%;
+      text-align: center;
+    }
+
+    .instagram h2 {
+      font-family: Georgia, serif;
+      font-size: 45px;
+      font-weight: normal;
+      margin-bottom: 15px;
+    }
+
+    .instagram-handle {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #777;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #1d1d1b;
+      color: white;
+      padding: 80px 6% 35px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 70px;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
+
+    .footer-description {
+      color: #aaa;
+      max-width: 300px;
+      font-size: 14px;
+    }
+
+    footer h4 {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 10px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #444;
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+
+      header {
+        padding: 20px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .header-icons {
+        font-size: 16px;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .intro {
+        padding: 80px 25px;
+      }
+
+      .collection {
+        padding: 20px 20px 80px;
+      }
+
+      .section-heading h2 {
+        font-size: 32px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .story-image {
+        min-height: 500px;
+      }
+
+      .story-content {
+        padding: 70px 30px;
+      }
+
+      .story-content h2 {
+        font-size: 43px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .feature:last-child {
+        border-bottom: none;
+      }
+
+      .heritage {
+        padding: 90px 25px;
+      }
+
+      .instagram {
+        padding: 90px 20px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px 25px;
+      }
+
+      .footer-top > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <a href="#" class="logo">DRESYA</a>
+
+    <nav>
+      <a href="#collection">Shop</a>
+      <a href="#story">Our Story</a>
+      <a href="#heritage">The Art of Silk</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-icons">
+      <span>⌕</span>
+      <span>♡</span>
+      <span>🛍</span>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-small">
+        Azerbaijani Silk · Contemporary Design
+      </div>
+
+      <h1>DRESYA</h1>
+
+      <p>Silk, shaped by heritage.</p>
+
+      <a href="#collection" class="button">
+        Explore Collection
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRO -->
+
+  <section class="intro">
+
+    <div class="eyebrow">
+      The Dresya Philosophy
+    </div>
+
+    <h2>
+      More than silk.<br>
+      A piece of heritage.
+    </h2>
+
+    <p>
+      Dresya brings the beauty of Azerbaijani ornamental heritage
+      into contemporary fashion through carefully crafted silk scarves.
+      Each piece is designed to carry a story of colour, pattern and culture.
+    </p>
+
+  </section>
+
+
+  <!-- COLLECTION -->
+
+  <section class="collection" id="collection">
+
+    <div class="section-heading">
+
+      <h2>The Collection</h2>
+
+      <a href="#" class="view-all">
+        View All
+      </a>
+
+    </div>
+
+
+    <div class="products">
+
+
+      <div class="product">
+
+        <div class="product-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1000&q=85"
+            alt="Camel Silk Scarf"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-name">
+            Camel Silk Scarf
+          </div>
+
+          <div class="product-detail">
+            100% Silk · 150 × 150 cm
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1601370690183-1c7796ecec61?auto=format&fit=crop&w=1000&q=85"
+            alt="Mountbatten Pink Silk Scarf"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-name">
+            Mountbatten Pink
+          </div>
+
+          <div class="product-detail">
+            100% Silk · 150 × 150 cm
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1611923134239-b9be5816e23c?auto=format&fit=crop&w=1000&q=85"
+            alt="Buta Silk Scarf"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-name">
+            Buta Silk Scarf
+          </div>
+
+          <div class="product-detail">
+            100% Silk · 150 × 150 cm
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- STORY -->
+
+  <section class="story" id="story">
+
+    <div class="story-image"></div>
+
+    <div class="story-content">
+
+      <div>
+
+        <div class="eyebrow">
+          Our Story
+        </div>
+
+        <h2>
+          From Azerbaijan,
+          with silk.
+        </h2>
+
+        <p>
+          Inspired by the rich visual language of Azerbaijan,
+          Dresya explores the meeting point between heritage
+          and modern elegance.
+        </p>
+
+        <a href="#" class="dark-button">
+          Discover Our Story
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HERITAGE -->
+
+  <section class="heritage" id="heritage">
+
+    <div class="eyebrow">
+      The Art of Silk
+    </div>
+
+    <h2>
+      Where tradition<br>
+      meets today.
+    </h2>
+
+    <p>
+      From intricate ornamental motifs to the timeless elegance
+      of silk, every Dresya piece is inspired by a heritage
+      that continues to evolve.
+    </p>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section class="features">
+
+    <div class="feature">
+
+      <div class="feature-number">01</div>
+
+      <h3>Pure Silk</h3>
+
+      <p>
+        Carefully selected silk created for a refined,
+        lightweight and elegant feel.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-number">02</div>
+
+      <h3>Crafted with Care</h3>
+
+      <p>
+        Each piece is produced with attention to
+        detail and craftsmanship.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <div class="feature-number">03</div>
+
+      <h3>Inspired by Heritage</h3>
+
+      <p>
+        Azerbaijani motifs and cultural elements
+        reimagined for contemporary style.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- INSTAGRAM -->
+
+  <section class="instagram" id="contact">
+
+    <div class="eyebrow">
+      Follow Dresya
+    </div>
+
+    <h2>
+      @thedresya
+    </h2>
+
+    <div class="instagram-handle">
+      SILK · HERITAGE · CONTEMPORARY
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-top">
+
+      <div>
+
+        <div class="footer-logo">
+          DRESYA
+        </div>
+
+        <p class="footer-description">
+          Silk, shaped by heritage.
+          Contemporary silk scarves inspired
+          by the visual culture of Azerbaijan.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>Explore</h4>
+
+        <ul>
+          <li><a href="#collection">Shop</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#heritage">The Art of Silk</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Customer Care</h4>
+
+        <ul>
+          <li>Shipping</li>
+          <li>Returns</li>
+          <li>Care Guide</li>
+          <li>FAQ</li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h4>Connect</h4>
+
+        <ul>
+          <li>
+            <a href="https://instagram.com/thedresya" target="_blank">
+              Instagram
+            </a>
+          </li>
+
+          <li>Email</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Dresya. All rights reserved.
+      </span>
+
+      <span>
+        Made with heritage.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
